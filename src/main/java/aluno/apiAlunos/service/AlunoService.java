@@ -1,5 +1,7 @@
 package aluno.apiAlunos.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +15,9 @@ public class AlunoService {
 	
 	public void salvar(AlunoModel aluno) {
 		alunoRepository.saveAndFlush(aluno);
+	}
+	
+	public List<AlunoModel> buscarTodos(){
+		return alunoRepository.findAll();
 	}
 }

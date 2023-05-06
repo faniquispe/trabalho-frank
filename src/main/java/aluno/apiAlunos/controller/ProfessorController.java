@@ -9,22 +9,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import aluno.apiAlunos.model.AlunoModel;
-import aluno.apiAlunos.service.AlunoService;
+import aluno.apiAlunos.model.ProfessorModel;
+import aluno.apiAlunos.service.ProfessorService;
 
 @RestController
-@RequestMapping("/aluno")
-public class AlunoController {
+@RequestMapping("/professor")
+public class ProfessorController {
+
 	@Autowired
-	AlunoService alunoService = new AlunoService();
+	ProfessorService professorService = new ProfessorService();
 	
 	@GetMapping
-	public List<AlunoModel> retornaTodosOsAlunos() {
-		return alunoService.buscarTodos();
+	public List<ProfessorModel> retornaTodosOsProfessor() {
+		return professorService.buscarTodos();
 	}
 	
 	@PostMapping
-	public void salvar(@RequestBody AlunoModel aluno) {
-		alunoService.salvar(aluno);
+	public void salvar(@RequestBody ProfessorModel professor) {
+		professorService.salvar(professor);
 	}
 }

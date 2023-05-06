@@ -9,9 +9,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "aluno")
-public class AlunoModel implements Serializable{
-	
+@Table(name = "professor")
+public class ProfessorModel implements Serializable{
+
 	/**
 	 * 
 	 */
@@ -19,12 +19,19 @@ public class AlunoModel implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idAluno;
+	private Long idProfessor;
 	private String nome;
 	private int idade;
 	private String sexo;
-	private String curso;
+	private String areaAtual;
+	private float salario;
 	
+	public float getSalario() {
+		return salario;
+	}
+	public void setSalario(float salario) {
+		this.salario = salario;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -43,11 +50,12 @@ public class AlunoModel implements Serializable{
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public String getCurso() {
-		return curso;
+	public String getAreaAtual() {
+		return areaAtual;
 	}
-	public void setCurso(String curso) {
-		this.curso = curso;
+	public void setAreaAtual(String areaAtual) {
+		this.areaAtual = areaAtual;
 	}
 	
+
 }
