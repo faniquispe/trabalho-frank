@@ -42,4 +42,8 @@ public class AlunoService {
 	public List<AlunoModel> buscarPorCurso(String curso){
 		return alunoRepository.findByCurso(curso);
 	}
+	
+	public List<AlunoModel> buscarPorCampus(String campus) {
+		return alunoRepository.findByCampus(campus);
+	}
 }
