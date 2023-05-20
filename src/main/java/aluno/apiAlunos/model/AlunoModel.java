@@ -24,6 +24,7 @@ public class AlunoModel implements Serializable{
 	private int idade;
 	private String sexo;
 	private String curso;
+	private String campus;
 	
 	public String getNome() {
 		return nome;
@@ -48,6 +49,12 @@ public class AlunoModel implements Serializable{
 	}
 	public void setCurso(String curso) {
 		this.curso = curso;
+	}
+	public String getCampus() {
+		return campus;
+	}
+	public void setCampus(String campus) {
+		this.campus = campus;
 	}
 	
 }
