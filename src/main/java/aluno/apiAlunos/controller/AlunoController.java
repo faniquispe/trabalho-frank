@@ -90,6 +90,18 @@ public class AlunoController {
 			}
 
 		}
+	
+	@GetMapping(value = "/campus/{campus}")
+		public ResponseEntity<List<AlunoModel>>retornaCampusAluno(@PathVariable(value = "campus") String campus){
+			List<AlunoModel> listaDeAlunos = null;
+			try {
+				listaDeAlunos = alunoService.buscarPorCampus(campus);
+				return new ResponseEntity<List<AlunoModel>>(listaDeAlunos, HttpStatus.OK);
+			} catch (Exception e) {
+				return new ResponseEntity<List<AlunoModel>>(listaDeAlunos, HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+
+		}
 	 
 	@PostMapping
 	public ResponseEntity<AlunoModel> salvar(@RequestBody AlunoModel aluno) {
