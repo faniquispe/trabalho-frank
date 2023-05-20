@@ -67,17 +67,29 @@ public class AlunoController {
 	  
 	  }
 	  
+//	  @GetMapping(value = "/curso/{curso}")
+//	  public ResponseEntity<Optional<AlunoModel>>retornaCursoAluno(@PathVariable(value = "curso") String curso) {
+//		  Optional<AlunoModel> aluno = null;
+//		  try {
+//			  aluno = alunoService.buscarPorCurso(curso);
+//			  return new ResponseEntity<Optional<AlunoModel>>(aluno, HttpStatus.OK);
+//		  }
+//		  catch (Exception e) {
+//			  return new ResponseEntity<Optional<AlunoModel>>(aluno,HttpStatus.INTERNAL_SERVER_ERROR);
+//		  }
+//	  }
+	  
 	  @GetMapping(value = "/curso/{curso}")
-	  public ResponseEntity<Optional<AlunoModel>>retornaCursoAluno(@PathVariable(value = "curso") String curso) {
-		  Optional<AlunoModel> aluno = null;
-		  try {
-			  aluno = alunoService.buscarPorCurso(curso);
-			  return new ResponseEntity<Optional<AlunoModel>>(aluno, HttpStatus.OK);
-		  }
-		  catch (Exception e) {
-			  return new ResponseEntity<Optional<AlunoModel>>(aluno,HttpStatus.INTERNAL_SERVER_ERROR);
-		  }
-	  }
+		public ResponseEntity<List<AlunoModel>>retornaCursoAluno(@PathVariable(value = "curso") String curso){
+			List<AlunoModel> listaDeAlunos = null;
+			try {
+				listaDeAlunos = alunoService.buscarPorCurso(curso);
+				return new ResponseEntity<List<AlunoModel>>(listaDeAlunos, HttpStatus.OK);
+			} catch (Exception e) {
+				return new ResponseEntity<List<AlunoModel>>(listaDeAlunos, HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+
+		}
 	 
 	@PostMapping
 	public ResponseEntity<AlunoModel> salvar(@RequestBody AlunoModel aluno) {

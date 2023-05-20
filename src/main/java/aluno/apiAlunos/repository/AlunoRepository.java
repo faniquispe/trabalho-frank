@@ -12,7 +12,8 @@ import aluno.apiAlunos.model.AlunoModel;
 public interface AlunoRepository extends JpaRepository<AlunoModel, Long>{
 	
 	public Optional<AlunoModel> findByNome(String nome);
-	public Optional<AlunoModel> findByCurso(String curso);
+//	public Optional<AlunoModel> findByCurso(String curso);
+	public List<AlunoModel> findByCurso(String curso);
 	List<AlunoModel> findTop10ByNomeContaining(String nome);
 
 }

@@ -35,7 +35,11 @@ public class AlunoService {
 		return alunoRepository.findByNome(nome);
 	}
 
-	public Optional<AlunoModel> buscarPorCurso(String curso) {
+//	public Optional<AlunoModel> buscarPorCurso(String curso) {
+//		return alunoRepository.findByCurso(curso);
+//	}
+	
+	public List<AlunoModel> buscarPorCurso(String curso){
 		return alunoRepository.findByCurso(curso);
 	}
 }
